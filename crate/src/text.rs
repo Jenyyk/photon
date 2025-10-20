@@ -118,6 +118,7 @@ pub fn draw_text(
     x: i32,
     y: i32,
     font_size: f32,
+    color: crate::Rgb,
 ) {
     let mut image = helpers::dyn_image_from_raw(photon_img).to_rgba8();
 
@@ -130,7 +131,7 @@ pub fn draw_text(
 
     draw_text_mut(
         &mut image,
-        Rgba([255u8, 255u8, 255u8, 255u8]),
+        Rgba([color.r, color.g, color.b, 255u8]),
         x,
         y,
         scale,
